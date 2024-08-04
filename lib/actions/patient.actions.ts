@@ -3,6 +3,7 @@ import { users } from "../appwrite.config";
 import { parseStringify } from "../utils";
 export const createUser = async (user: CreateUserParams) => {
   try {
+    console.log("Creating user with params:", user);
     const newUser = await users.create(
       ID.unique(),
       user.email,
@@ -20,3 +21,11 @@ export const createUser = async (user: CreateUserParams) => {
     console.error(error);
   }
 };
+export const getUser = async (userId: string) => {
+  try {
+    const user = await users.get(userId);
+    return parseStringify(user);
+  } catch (error) {
+    console.error(error);
+  }
+}
