@@ -123,7 +123,7 @@ const RegisterForm = ({ user }: { user: User }) => {
                             <FormControl>
                                 <RadioGroup className="flex h-11 gap-6 xl:justify-between" onValueChange={field.onChange} defaultValue={field.value}>
                                     {GenderOptions.map((option) => (
-                                    <div key={option} className="radiogroup">
+                                    <div key={option} className="radio-group">
                                         <RadioGroupItem value={option} id={option} />
                                         <Label htmlFor={option} className="cursor-pointer">
                                             {option}
