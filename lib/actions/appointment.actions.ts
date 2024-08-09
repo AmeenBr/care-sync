@@ -104,7 +104,6 @@ ${
 `;
 
     await sendSMSNotification(userId, smsMessage);
-    console.log("sms sent");
     revalidatePath("/admin");
     return parseStringify(updatedAppointment);
   } catch (error) {
