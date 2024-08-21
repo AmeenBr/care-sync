@@ -15,7 +15,6 @@ import { databases } from "../appwrite.config";
 
 export const createUser = async (user: CreateUserParams) => {
   try {
-    console.log("Creating user with params:", user);
     const newUser = await users.create(
       ID.unique(),
       user.email,

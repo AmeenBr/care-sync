@@ -40,7 +40,7 @@ const AppointmentForm = ({ userId, patientId, type, appointment, setOpen }: {
         resolver: zodResolver(AppointmentFormValidation),
         defaultValues: {
             primaryPhysician: appointment ? appointment.primaryPhysician : "",
-            schedule: appointment ? new Date(appointment?.schedule!) : new Date(now()),
+            schedule: appointment ? new Date(appointment?.schedule!) : new Date(Date.now()),
             reason: appointment ? appointment.reason : "",
             note: appointment ? appointment.note : "",
             cancellationReason: appointment?.cancellationReason || "",
@@ -217,6 +217,3 @@ const AppointmentForm = ({ userId, patientId, type, appointment, setOpen }: {
 
 export default AppointmentForm
 
-function now(): string | number | Date {
-    throw new Error("Function not implemented.")
-}
